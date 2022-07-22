@@ -79,7 +79,7 @@ function onCheckOrDelete(e) {
 function onCheck(target) {
   const id = target.dataset.id;
   const checked = document.querySelector(`.item__name[data-id="${id}"]`);
-  checked.classList.add('item__name--checked');
+  checked.classList.toggle('item__name--checked');
 }
 
 function onDelete(target) {
