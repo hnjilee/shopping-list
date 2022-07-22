@@ -208,3 +208,29 @@ ul {
 .form__btn:hover {
   opacity: 0.9;
 }
+
+/* Sidebar */
+.categories__header {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+}
+
+.categories__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em;
+}
+
+.category {
+  text-align: start;
+  padding: 0.75em;
+  background-color: var(--color-grey);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+}
+
+.category__checkbox {
+  margin-right: 0.5em;
+}
