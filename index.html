@@ -24,5 +24,46 @@
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Main container -->
+    <main class="shopping">
+      <!-- Header -->
+      <header class="shopping__header">
+        <h1 class="shopping__title">SHOPPING LIST</h1>
+        <button class="shopping__clear">Clear</button>
+      </header>
+
+      <!-- List -->
+      <ul class="shopping__list">
+        <li class="shopping__item">
+          <div class="item__category">Groceries</div>
+          <div class="item__name">coffee</div>
+          <div class="item__btns">
+            <button class="item__check">
+              <i class="fa-regular fa-circle-check"></i>
+            </button>
+            <button class="item__delete">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Form -->
+      <form class="shopping__form">
+        <select class="form__select">
+          <option value="">Category</option>
+          <option value="groceries">Groceries</option>
+          <option value="necessities">Necessities</option>
+          <option value="clothing">Clothing</option>
+          <option value="others">Others</option>
+        </select>
+        <input type="text" class="form__input" />
+        <button class="form__btn">Add</button>
+      </form>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="categories"></aside>
+  </body>
 </html>
