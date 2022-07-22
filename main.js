@@ -5,12 +5,15 @@ const form = document.querySelector('.shopping__form');
 const formSelect = document.querySelector('.form__select');
 const formInput = document.querySelector('.form__input');
 const clear = document.querySelector('.shopping__clear');
+const categories = document.querySelector('.categories__list');
 
 form.addEventListener('submit', onAdd);
 
 list.addEventListener('click', onCheckOrDelete);
 
 clear.addEventListener('click', onClear);
+
+categories.addEventListener('change', onFilter);
 
 function onAdd(e) {
   e.preventDefault();
@@ -39,6 +42,7 @@ function createListItem(selectValue, inputValue) {
   const listItem = document.createElement('li');
   listItem.classList.add('shopping__item');
   listItem.setAttribute('data-id', id);
+  listItem.setAttribute('data-category', selectValue);
   listItem.innerHTML = `
     <div class="item__category">${selectValue}</div>
     <div class="item__name" data-id="${id}">${inputValue}</div>
@@ -82,4 +86,32 @@ function onDelete(target) {
 
 function onClear() {
   list.innerHTML = '';
+}
+
+function onFilter(e) {
+  const listItems = document.querySelectorAll('.shopping__item');
+  const target = e.target;
+  const category = target.dataset.value;
+
+  if (target.checked) {
+    show(listItems, category);
+  } else {
+    hide(listItems, category);
+  }
+}
+
+function show(listItems, category) {
+  listItems.forEach(item => {
+    if (item.dataset.category === category) {
+      item.classList.remove('shopping__item--hidden');
+    }
+  });
+}
+
+function hide(listItems, category) {
+  listItems.forEach(item => {
+    if (item.dataset.category === category) {
+      item.classList.add('shopping__item--hidden');
+    }
+  });
 }

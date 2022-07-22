@@ -146,6 +146,10 @@ ul {
   color: var(--color-black);
 }
 
+.shopping__item--hidden {
+  display: none;
+}
+
 .item__category {
   width: 8rem;
   padding: var(--padding-item);
