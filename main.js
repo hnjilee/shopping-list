@@ -7,6 +7,8 @@ const formInput = document.querySelector('.form__input');
 
 form.addEventListener('submit', onAdd);
 
+list.addEventListener('click', onCheckOrDelete);
+
 function onAdd(e) {
   e.preventDefault();
 
@@ -29,20 +31,48 @@ function onAdd(e) {
 }
 
 function createListItem(selectValue, inputValue) {
+  const id = Date.now();
+
   const listItem = document.createElement('li');
   listItem.classList.add('shopping__item');
+  listItem.setAttribute('data-id', id);
   listItem.innerHTML = `
     <div class="item__category">${selectValue}</div>
-    <div class="item__name">${inputValue}</div>
+    <div class="item__name" data-id="${id}">${inputValue}</div>
     <div class="item__btns">
-      <button class="item__btn item__check">
-        <i class="fa-regular fa-circle-check"></i>
+      <button class="item__btn item__check" data-id="${id}">
+        <i class="fa-regular fa-circle-check item__check" data-id="${id}"></i>
       </button>
-      <button class="item__btn item__delete">
-        <i class="fa-regular fa-trash-can"></i>
+      <button class="item__btn item__delete" data-id="${id}">
+        <i class="fa-regular fa-trash-can item__delete" data-id="${id}"></i>
       </button>
     </div>
     `;
 
   return listItem;
+}
+
+function onCheckOrDelete(e) {
+  const target = e.target;
+  const classList = target.classList;
+
+  if (classList.contains('item__check')) {
+    onCheck(target);
+  } else if (classList.contains('item__delete')) {
+    onDelete(target);
+  } else {
+    return;
+  }
+}
+
+function onCheck(target) {
+  const id = target.dataset.id;
+  const checked = document.querySelector(`.item__name[data-id="${id}"]`);
+  checked.classList.add('item__name--checked');
+}
+
+function onDelete(target) {
+  const id = target.dataset.id;
+  const deleted = document.querySelector(`li[data-id="${id}"]`);
+  deleted.remove();
 }

@@ -161,6 +161,10 @@ ul {
   padding: var(--padding-item);
 }
 
+.item__name--checked {
+  text-decoration: line-through;
+}
+
 .item__btns {
   display: flex;
   justify-content: space-between;
