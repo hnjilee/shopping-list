@@ -234,3 +234,23 @@ ul {
 .category__checkbox {
   margin-right: 0.5em;
 }
+
+/* For screen width below 48rem */
+@media screen and (max-width: 48rem) {
+  body {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .shopping {
+    width: 100%;
+  }
+
+  .categories__header {
+    display: none;
+  }
+
+  .categories__list {
+    flex-direction: row;
+  }
+}
