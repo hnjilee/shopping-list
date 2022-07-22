@@ -26,6 +26,8 @@
   --border-radius: 8px;
 
   /* Shadow */
+  --shadow-on-yellow: 0px 2px 2px rgba(188, 32, 71, 0.3),
+    0px 4px 18px rgba(240, 61, 108, 0.5);
   --shadow-on-white: 0px 2px 2px hsla(236, 7%, 59%, 0.3),
     0px 4px 14px hsla(236, 7%, 59%, 0.6);
 }
@@ -70,6 +72,7 @@ ul {
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-on-yellow);
 }
 
 .header {
