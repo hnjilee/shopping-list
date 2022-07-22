@@ -17,6 +17,10 @@
   /* Font weight */
   --weight-bold: 700;
   --weight-regular: 400;
+
+  /* Border */
+  --border: solid 2px var(--color-black);
+  --border-radius: 8px;
 }
 
 * {
@@ -28,4 +32,29 @@ button,
 select,
 input {
   font-family: 'Nunito', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--color-yellow);
+}
+
+/* Common */
+.container {
+  text-align: center;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+}
+
+.header {
+  padding: 1em;
+  border-bottom: var(--border);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
