@@ -26,7 +26,7 @@
   --border-radius: 8px;
 
   /* Shadow */
-  --shadow-item: 0px 2px 2px hsla(236, 7%, 59%, 0.3),
+  --shadow-on-white: 0px 2px 2px hsla(236, 7%, 59%, 0.3),
     0px 4px 14px hsla(236, 7%, 59%, 0.6);
 }
 
@@ -131,7 +131,7 @@ ul {
   border-color: var(--color-light-yellow);
   border-radius: var(--border-radius);
   background-color: var(--color-white);
-  box-shadow: var(--shadow-item);
+  box-shadow: var(--shadow-on-white);
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
   color: var(--color-black);
@@ -164,4 +164,47 @@ ul {
 
 .item__btn:hover {
   color: var(--color-dark-yellow);
+}
+
+/* Form */
+.shopping__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-top: var(--border);
+}
+
+.form__select,
+.form__input {
+  padding: 0.5em;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  outline: none;
+  box-shadow: var(--shadow-on-white);
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+}
+
+.form__select {
+  border-color: var(--color-light-yellow);
+  background-color: var(--color-dark-yellow);
+  color: var(--color-white);
+}
+
+.form__input {
+  width: 100%;
+  margin: 0 0.5em;
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.form__btn {
+  background-color: var(--color-black);
+  box-shadow: var(--shadow-on-white);
+  color: var(--color-white);
+}
+
+.form__btn:hover {
+  opacity: 0.9;
 }
