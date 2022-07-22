@@ -44,6 +44,13 @@ body {
   background-color: var(--color-yellow);
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 /* Common */
 .container {
   text-align: center;
@@ -57,4 +64,42 @@ body {
   border-bottom: var(--border);
   background-color: var(--color-black);
   color: var(--color-white);
+}
+
+.btn {
+  padding: 0.5em 1em;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+}
+
+/* Main container */
+.shopping {
+  width: 70%;
+  max-width: 62.5rem;
+}
+
+/* Header */
+.shopping__header {
+  position: relative;
+}
+
+.shopping__title {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+}
+
+.shopping__clear {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  border-color: var(--color-dark-red);
+  background-color: var(--color-light-red);
+  color: var(--color-white);
+}
+
+.shopping__clear:hover {
+  border-color: var(--color-light-red);
+  background-color: var(--color-dark-red);
 }
