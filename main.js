@@ -30,6 +30,7 @@ function onAdd(e) {
 
   const listItem = createListItem(selectValue, inputValue);
   list.append(listItem);
+  listItem.scrollIntoView({ behavior: 'smooth' });
 
   formInput.value = '';
   focusOnInput();
