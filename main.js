@@ -4,10 +4,13 @@ const list = document.querySelector('.shopping__list');
 const form = document.querySelector('.shopping__form');
 const formSelect = document.querySelector('.form__select');
 const formInput = document.querySelector('.form__input');
+const clear = document.querySelector('.shopping__clear');
 
 form.addEventListener('submit', onAdd);
 
 list.addEventListener('click', onCheckOrDelete);
+
+clear.addEventListener('click', onClear);
 
 function onAdd(e) {
   e.preventDefault();
@@ -75,4 +78,8 @@ function onDelete(target) {
   const id = target.dataset.id;
   const deleted = document.querySelector(`li[data-id="${id}"]`);
   deleted.remove();
+}
+
+function onClear() {
+  list.innerHTML = '';
 }
