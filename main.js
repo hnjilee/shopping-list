@@ -7,12 +7,10 @@ const formInput = document.querySelector('.form__input');
 const clear = document.querySelector('.shopping__clear');
 const categories = document.querySelector('.categories__list');
 
+formSelect.addEventListener('change', () => focusOnInput());
 form.addEventListener('submit', onAdd);
-
 list.addEventListener('click', onCheckOrDelete);
-
 clear.addEventListener('click', onClear);
-
 categories.addEventListener('change', onFilter);
 
 function onAdd(e) {
@@ -26,6 +24,7 @@ function onAdd(e) {
 
   const inputValue = formInput.value;
   if (!/\S/.test(inputValue)) {
+    focusOnInput();
     return;
   }
 
@@ -33,6 +32,10 @@ function onAdd(e) {
   list.append(listItem);
 
   formInput.value = '';
+  focusOnInput();
+}
+
+function focusOnInput() {
   formInput.focus();
 }
 
